@@ -1,0 +1,52 @@
+{% load thumbnail %}
+<div class="test">
+    <div class="type2" data-question-id="{{ question.pk }}" id="test_type">
+        <h3>{{ question.name }}</h3>
+        <div class="type2-content">
+            {% if question.image %}
+                {% thumbnail question.image "x360" as im %}
+                    <div class="type2-img">
+                        <img src="{{ im.url }}" alt="{{ im }}">
+                    </div>
+                {% endthumbnail %}
+            {% endif %}
+            <div class="uk-form-controls">
+                {% for i in question.exercise_answer.all %}
+                    <label>
+                        <input class="uk-radio exercise_answer" type="radio" name="answer_{{ i.pk }}"
+                               data-id="{{ i.pk }}" data-correct="{{ i.is_correct }}"> {{ i.answer }}
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+        <button class="uk-button uk-button-default exercise_submit">Ok</button>
+    </div>
+</div>
+<div class="q-overlay" style="display: none;">
+    <span class="close_modal_button" uk-icon="icon: close" style="cursor: pointer"></span>
+    <div class="correct-response answer_description" style="display: none;">
+        <div class="overlay-true">
+            <i class="zmdi zmdi-check-circle"></i>
+            <h4>Верно!</h4>
+        </div>
+        <p><a href="#" class="uk-link-heading close_modal_button uk-text-success">Далее</a></p>
+    </div>
+    <div class="correct-response wrong_answer" style="display: none;">
+        <div class="overlay-false">
+            <i class="zmdi zmdi-minus-circle"></i>
+            <h4>Неверно!</h4>
+        </div>
+
+        <p>
+            <b class="correct-answer-span">Правильный ответ:</b>
+            <span id="correct_answer">
+            {% for i in question.exercise_answer.all %}
+                {% if i.is_correct %}
+                    {{ i.answer }}
+                {% endif %}
+            {% endfor %}
+        </span>
+        </p>
+        <p><a href="#" class="uk-link-heading close_modal_button uk-text-success">Далее</a></p>
+    </div>
+</div>

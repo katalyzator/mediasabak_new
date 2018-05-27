@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="category-page">
+        <div class="uk-container uk-container-small">
+            <div class="uk-child-width-1-4@l uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-small" uk-grid>
+                {% for i in parts %}
+                    <div class="uk-text-center">
+                        <a href="{% url 'test' i.id %}" class="category">
+                            <div>
+                                <span>
+                                    <img src="{{ i.image.url }}" alt="image">
+                                </span>
+                                <p>{{ i.title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

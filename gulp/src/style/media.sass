@@ -1,0 +1,179 @@
+@mixin until($value)
+  @media screen and (max-width: $value + px)
+    @content
+
+@mixin from($value)
+  @media screen and (min-width: $value + px)
+    @content
+
+@include until(1200)
+  .img-container
+    margin: 0 auto
+  .project
+    flex-wrap: wrap
+    .project-desc
+      width: 100%
+      margin-top: 20px
+    .project-img
+      margin-right: 20px
+  .test-page
+    .tests
+      .type1
+        .uk-form-controls
+          label
+            width: 100%
+            justify-content: flex-start
+            input
+              margin-right: 20px
+      .type5
+        padding: 50px 20px 60px
+
+@include until(1100)
+  .test-page,
+  .lesson-page
+    .uk-container
+      padding-left: 10px
+      padding-right: 10px
+  .lesson-page
+    .lesson-switcher
+      flex-wrap: wrap
+      div.tabs-nav:first-of-type
+        display: flex
+        justify-content: space-around
+        align-items: flex-start
+        flex-wrap: wrap
+      .downloads
+        display: flex
+        justify-content: center
+        a
+          margin: 0 10px
+    .switcher-btns
+      width: 100%
+      margin-right: 0
+    .lesson-title
+      padding: 0
+    .tabs-content
+      width: 100%
+      margin-top: 20px
+      .infographic
+        height: 400px
+    .tests .type2
+      padding-right: 20px
+      padding-left: 20px
+      .type2-content
+        flex-direction: column
+        .type2-img
+          margin-right: 0
+        .uk-form-controls
+          width: 100%
+          margin-top: 20px
+
+@include until(960)
+  body
+    padding-bottom: 220px
+  footer .contacts p
+    justify-content: flex-start
+  .about-us-page
+    .logotype1,
+    .logotype2
+      background-color: transparent
+      margin-right: 0
+    .logotype1
+      img
+        width: 100%
+        max-width: 350px
+    .logotype2
+      img
+        width: 100%
+        max-width: 130px
+  .category-page
+    padding: 80px 0 100px
+  .img-container
+    margin: 0
+  #select_language_form
+    width: 100%
+  .test-page,
+  .lesson-page
+    .test_block
+      width: 100%
+      .tests
+        .type1
+          padding: 60px 20px 50px
+          .q-video
+            height: 300px
+        .type3
+          padding: 25px 20px 40px
+          .type3-content
+            flex-wrap: wrap
+            justify-content: center
+            .type3-img
+              margin-right: 0
+            .uk-form-controls
+              width: 100%
+              margin-top: 20px
+        .type6
+          padding: 20px 20px 40px
+
+@include until(800)
+  .tests
+    .type1 .uk-form-controls label
+      width: 100%
+    .type5
+      padding: 20px 10px 30px
+      .type5-img
+        height: auto
+      .btns
+        flex-wrap: wrap
+        .uk-button
+          margin-bottom: 10px
+    .type6
+      .type6-content
+        .term-block
+          p
+            width: 50%
+        .term-definition
+          li
+            flex-wrap: wrap
+            p
+              max-width: 100%
+              padding-top: 10px
+          .options
+            width: 100%
+            label
+              width: 50%
+
+@include until(640)
+  body
+    padding-bottom: 335px
+
+@include until(500)
+  .my-profile .change-profile-form
+    padding: 45px 20px 65px
+  .tests .type2 .type2-img
+    width: 100%
+  .lesson-page
+    .lesson-switcher
+      div.tabs-nav:first-of-type
+        justify-content: center
+    .switcher-btns
+      button
+        margin: 10px
+    .tabs-content
+      .infographic
+        height: 300px
+  .test-page
+    .test_block
+      .tests
+        .type3
+          .type3-content
+            .type3-img
+              width: 100%
+              height: 280px
+        .type5
+          padding: 50px 10px 60px
+          .type5-img
+            height: auto
+          .btns
+            display: flex
+            justify-content: space-between
+            padding: 20px 0 0

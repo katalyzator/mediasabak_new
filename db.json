@@ -1,0 +1,538 @@
+[
+  {
+    "model": "sessions.session",
+    "pk": "a7hl7cp33zmf2130eash0cmcronklkua",
+    "fields": {
+      "session_data": "MTdmZmRkYzBmYTdhYjcyODBmYmVlODRlNGMyYzM4YTBlOTU0MDIxOTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2Njg5ZTNiMzJmNjVkYjIwNGM0NjY3ZjczZDk2YjY2ZmQ0YzBkMGMxIn0=",
+      "expire_date": "2018-02-08T08:04:02.417Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "eb5dz5q6bnfkc00t81go0pt717dkqdt8",
+    "fields": {
+      "session_data": "NmI3YmJkODUwZmM2YjVlNDk5NzA0MjY5Y2U1ZWQ2NmRkYTZjZjcyYTp7Il9hdXRoX3VzZXJfaGFzaCI6IjY2ODllM2IzMmY2NWRiMjA0YzQ2NjdmNzNkOTZiNjZmZDRjMGQwYzEiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIn0=",
+      "expire_date": "2018-02-08T14:03:44.561Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "qqom78tdksq1mni72ml9nnmnsc2m99hr",
+    "fields": {
+      "session_data": "YWZmOGQwZDg0NmRlNjNkYzg0NTk5NzM0ZmExOGI0ZWFmOWI2YTQ3Mjp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiYWxsYXV0aC5hY2NvdW50LmF1dGhfYmFja2VuZHMuQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiYTg4NDcxNzgzZDM1OWFhZTJiYmY0MTgyNjU1YTE1Y2ZkOTNmZDMzNyIsInNvY2lhbGFjY291bnRfc3RhdGUiOlt7ImF1dGhfcGFyYW1zIjoiIiwicHJvY2VzcyI6ImxvZ2luIiwibmV4dCI6Ii9hbGxfbGVzc29ucy8iLCJzY29wZSI6IiJ9LCJYTEdRSVFjSTN3SU0iXX0=",
+      "expire_date": "2018-02-09T06:18:28.954Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "vyeyyljpspf2ogdw70h4sykui6xh668r",
+    "fields": {
+      "session_data": "YTMxMGZhMzYzMTE5YWFkZTQ3ZTM1NGJmOWJhOTFhNjVmNWQ3MzUzNzp7Il9hdXRoX3VzZXJfaGFzaCI6IjY2ODllM2IzMmY2NWRiMjA0YzQ2NjdmNzNkOTZiNjZmZDRjMGQwYzEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+      "expire_date": "2018-02-08T18:29:09.835Z"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "domain": "example.com",
+      "name": "example.com"
+    }
+  },
+  {
+    "model": "web_app_models.users",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$T3LZ761W35x1$jm77vHeQHO6bVrqPmCjbTpvg++4yqaPCpUs3lehB4MY=",
+      "last_login": "2018-01-26T05:32:39.863Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2018-01-24T09:24:04Z",
+      "email": "jackmovies02@gmail.com",
+      "username": "Noors",
+      "gender": "male",
+      "birth_date": "1998-07-27",
+      "phone": "+996771841641",
+      "groups": [],
+      "user_permissions": [],
+      "learned_lessons": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "web_app_models.users",
+    "pk": 3,
+    "fields": {
+      "password": "!2LPCOIssXhqW7CMHS9334lyc2svx7Be5m0UrtKsp",
+      "last_login": "2018-01-26T06:18:28.906Z",
+      "is_superuser": false,
+      "first_name": "Nursultan",
+      "last_name": "Ergeshov",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2018-01-24T11:46:42Z",
+      "email": "jackmovies01@gmail.com",
+      "username": "nursultan",
+      "gender": "male",
+      "birth_date": "2018-01-02",
+      "phone": "+996771841641",
+      "groups": [],
+      "user_permissions": [],
+      "learned_lessons": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "web_app_models.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "\u0423\u0440\u043e\u043a \u043f\u0435\u0440\u0432\u044b\u0439",
+      "image": "pexels-photo-248880-iloveimg-compressed_cyEUtBD.jpeg",
+      "video_key": "c4BLVznuWnU",
+      "infographic_video_key": "c4BLVznuWnU",
+      "pdf_file": "",
+      "word_file": "",
+      "slug": "urok-pervyij"
+    }
+  },
+  {
+    "model": "web_app_models.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "\u0423\u0440\u043e\u043a \u0432\u0442\u043e\u0440\u043e\u0439",
+      "image": "03.png",
+      "video_key": "c4BLVznuWnU",
+      "infographic_video_key": "c4BLVznuWnU",
+      "pdf_file": "",
+      "word_file": "",
+      "slug": "urok-vtoroj"
+    }
+  },
+  {
+    "model": "web_app_models.imageslide",
+    "pk": 3,
+    "fields": {
+      "name": "\u042d\u0442\u043e \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u043d\u043e",
+      "lesson": 2,
+      "image": "01_ik2H0My.png"
+    }
+  },
+  {
+    "model": "web_app_models.imageslide",
+    "pk": 4,
+    "fields": {
+      "name": "sdgfasdfadsf",
+      "lesson": 2,
+      "image": "04_r72Q3d5.png"
+    }
+  },
+  {
+    "model": "web_app_models.imageslide",
+    "pk": 5,
+    "fields": {
+      "name": "\u041f\u0435\u0440\u0432\u044b\u0439 \u0441\u043b\u0430\u0439\u0434",
+      "lesson": 3,
+      "image": "01_IbLpz0O.png"
+    }
+  },
+  {
+    "model": "web_app_models.imageslide",
+    "pk": 6,
+    "fields": {
+      "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u0441\u043b\u0430\u0439\u0434",
+      "lesson": 3,
+      "image": "02_1li72Xb.png"
+    }
+  },
+  {
+    "model": "web_app_models.interestingfacts",
+    "pk": 2,
+    "fields": {
+      "image": "cache/dc/4d/dc4d6c224851bda4d9c91753fb1e88be_KWYWqPU.jpg",
+      "lesson": 2
+    }
+  },
+  {
+    "model": "web_app_models.interestingfacts",
+    "pk": 3,
+    "fields": {
+      "image": "cache/f3/7b/f37be9f109f105486e9a97e6d878c362_utDuhRS.jpg",
+      "lesson": 2
+    }
+  },
+  {
+    "model": "web_app_models.interestingfacts",
+    "pk": 4,
+    "fields": {
+      "image": "cache/18/cf/18cfcf2f851ca2768e702f3d3a82e34c_RraHE3b.jpg",
+      "lesson": 3
+    }
+  },
+  {
+    "model": "web_app_models.interestingfacts",
+    "pk": 5,
+    "fields": {
+      "image": "cache/d0/3b/d03b9bc1b6202a350b825fea2f2b1b1b_kNys9ie.jpg",
+      "lesson": 3
+    }
+  },
+  {
+    "model": "account.emailaddress",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "email": "jackmovies01@gmail.com",
+      "verified": true,
+      "primary": true
+    }
+  },
+  {
+    "model": "socialaccount.socialapp",
+    "pk": 1,
+    "fields": {
+      "provider": "vk",
+      "name": "MediaSabak",
+      "client_id": "6344539",
+      "secret": "gtrD2gVismTEeukXzxgT",
+      "key": "98ad2c0898ad2c0898ad2c084398cde353998ad98ad2c08c2c57d432cbe83b4d778bfe1",
+      "sites": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "socialaccount.socialapp",
+    "pk": 2,
+    "fields": {
+      "provider": "facebook",
+      "name": "MediaSabak",
+      "client_id": "445850015833506",
+      "secret": "d1c3709c3633f070084220796362b851",
+      "key": "",
+      "sites": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "socialaccount.socialapp",
+    "pk": 3,
+    "fields": {
+      "provider": "google",
+      "name": "MediaSabak",
+      "client_id": "375090935120-p53v15r9g66fcc9f1jjqmrpglkgr3n0p.apps.googleusercontent.com",
+      "secret": "H2ogLl6J7GeXbjnEZ3zipf10",
+      "key": "",
+      "sites": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "socialaccount.socialaccount",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "provider": "facebook",
+      "uid": "1938916333092098",
+      "last_login": "2018-01-26T06:18:28.563Z",
+      "date_joined": "2018-01-24T11:46:43.107Z",
+      "extra_data": "{\"gender\": \"male\", \"updated_time\": \"2017-08-04T10:21:45+0000\", \"timezone\": 6, \"name\": \"Nursultan Ergeshov\", \"last_name\": \"Ergeshov\", \"id\": \"1938916333092098\", \"first_name\": \"Nursultan\", \"verified\": true, \"locale\": \"en_GB\", \"link\": \"https://www.facebook.com/app_scoped_user_id/1938916333092098/\", \"email\": \"jackmovies01@gmail.com\"}"
+    }
+  },
+  {
+    "model": "socialaccount.socialtoken",
+    "pk": 2,
+    "fields": {
+      "app": 2,
+      "account": 2,
+      "token": "EAAGVf4vRHaIBAButUnRMHjAPdxqLf2izgtJJGn99YRVLQPMWaakEDOGDZC7IwDsEJgTyUl9J0rW5sXTvKohZBupp6pGHlZCKftWiPlEZAQIZCH9ALQ7NA8qAdCeAnZAZCZA3COUGnMZC83skD8CqmaNMLCcEmg4lNJb1HCwmeEVRzh1nqPT9MUQermBekpqNsd2gYio26aZAgF7AZDZD",
+      "token_secret": "",
+      "expires_at": null
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||11d1d8483ac7525c59b852aadb83f423",
+    "fields": {
+      "value": "{\"name\": \"02_FrREzFa.png\", \"size\": [3508, 2480], \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||11fe5c0c67f91ba60a2d03a12a0fbeba",
+    "fields": {
+      "value": "{\"size\": [3508, 2480], \"name\": \"01_hSEt2Qs.png\", \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||2e04819e9d423c771afda46365fc913e",
+    "fields": {
+      "value": "{\"name\": \"01_lxAudTH.png\", \"size\": [3508, 2480], \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||464687999de0e12231db3d67001ad1d1",
+    "fields": {
+      "value": "{\"size\": [3508, 2480], \"name\": \"02.png\", \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||49c988f9111d31b1ebc8a52dc8e9563e",
+    "fields": {
+      "value": "{\"size\": [1056, 747], \"name\": \"cache/f3/7b/f37be9f109f105486e9a97e6d878c362.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||5afad449873bdba07f7ca16bf3bd9b53",
+    "fields": {
+      "value": "{\"name\": \"cache/d0/3b/d03b9bc1b6202a350b825fea2f2b1b1b.jpg\", \"size\": [1056, 747], \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||8eed4fe9a17a670f2be7771d0e13dfc2",
+    "fields": {
+      "value": "{\"size\": [1056, 747], \"name\": \"cache/dc/4d/dc4d6c224851bda4d9c91753fb1e88be.jpg\", \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||a77bcedf1c5738366ac08f3af2e98447",
+    "fields": {
+      "value": "{\"name\": \"cache/18/cf/18cfcf2f851ca2768e702f3d3a82e34c.jpg\", \"size\": [1056, 747], \"storage\": \"django.core.files.storage.FileSystemStorage\"}"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||11d1d8483ac7525c59b852aadb83f423",
+    "fields": {
+      "value": "[\"5afad449873bdba07f7ca16bf3bd9b53\"]"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||11fe5c0c67f91ba60a2d03a12a0fbeba",
+    "fields": {
+      "value": "[\"8eed4fe9a17a670f2be7771d0e13dfc2\"]"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||2e04819e9d423c771afda46365fc913e",
+    "fields": {
+      "value": "[\"a77bcedf1c5738366ac08f3af2e98447\"]"
+    }
+  },
+  {
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||464687999de0e12231db3d67001ad1d1",
+    "fields": {
+      "value": "[\"49c988f9111d31b1ebc8a52dc8e9563e\"]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2018-01-24T09:28:17.347Z",
+      "user": 1,
+      "content_type": 25,
+      "object_id": "1",
+      "object_repr": "MediaSabak",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2018-01-24T09:31:58.519Z",
+      "user": 1,
+      "content_type": 25,
+      "object_id": "2",
+      "object_repr": "MediaSabak",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2018-01-24T09:39:09.169Z",
+      "user": 1,
+      "content_type": 25,
+      "object_id": "3",
+      "object_repr": "MediaSabak",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2018-01-24T11:36:37.500Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "jackmovies01@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"gender\", \"birth_date\", \"phone\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2018-01-24T11:36:46.119Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "jackmovies02@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"email\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2018-01-24T11:38:01.946Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "jackmovies01@gmail.com",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2018-01-25T08:05:59.482Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "\u0423\u0440\u043e\u043a \u043f\u0435\u0440\u0432\u044b\u0439",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"object\": \"\\u042d\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u043e\", \"name\": \"\\u0421\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\"}}, {\"added\": {\"object\": \"sdgfasdfadsf\", \"name\": \"\\u0421\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\"}}, {\"added\": {\"object\": \"cache/dc/4d/dc4d6c224851bda4d9c91753fb1e88be_KWYWqPU.jpg\", \"name\": \"\\u042d\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u043e\"}}, {\"added\": {\"object\": \"cache/f3/7b/f37be9f109f105486e9a97e6d878c362_utDuhRS.jpg\", \"name\": \"\\u042d\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u043e\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2018-01-25T08:12:37.163Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "\u0423\u0440\u043e\u043a \u043f\u0435\u0440\u0432\u044b\u0439",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2018-01-25T08:12:41.454Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "\u0423\u0440\u043e\u043a \u043f\u0435\u0440\u0432\u044b\u0439",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2018-01-25T08:16:08.290Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "jackmovies02@gmail.com",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2018-01-25T13:11:37.342Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "jackmovies01@gmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"gender\", \"birth_date\", \"phone\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2018-01-25T14:07:01.518Z",
+      "user": 1,
+      "content_type": 28,
+      "object_id": "1",
+      "object_repr": "Text",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2018-01-25T14:09:00.159Z",
+      "user": 1,
+      "content_type": 28,
+      "object_id": "2",
+      "object_repr": "New text",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2018-01-25T19:04:49.978Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "jackmovies02@gmail.com",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2018-01-26T05:34:11.248Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "\u0423\u0440\u043e\u043a \u0432\u0442\u043e\u0440\u043e\u0439",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"object\": \"\\u041f\\u0435\\u0440\\u0432\\u044b\\u0439 \\u0441\\u043b\\u0430\\u0439\\u0434\", \"name\": \"\\u0421\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\"}}, {\"added\": {\"object\": \"\\u0412\\u0442\\u043e\\u0440\\u043e\\u0439 \\u0441\\u043b\\u0430\\u0439\\u0434\", \"name\": \"\\u0421\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\"}}, {\"added\": {\"object\": \"cache/18/cf/18cfcf2f851ca2768e702f3d3a82e34c_RraHE3b.jpg\", \"name\": \"\\u042d\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u043e\"}}, {\"added\": {\"object\": \"cache/d0/3b/d03b9bc1b6202a350b825fea2f2b1b1b_kNys9ie.jpg\", \"name\": \"\\u042d\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043d\\u043e\"}}]"
+    }
+  }
+]

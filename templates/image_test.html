@@ -1,0 +1,18 @@
+{% load thumbnail %}
+<div class="test">
+    <div class="type5" data-question-id="{{ question.pk }}" id="test_type">
+        <h3>{{ question.name }}</h3>
+        {% thumbnail question.image "x360" as im %}
+            <div class="type5-img">
+                <img src="{{ im.url }}" alt="{{ im }}">
+            </div>
+        {% endthumbnail %}
+        <div class="btns">
+            {% for i in question.test_answer.all %}
+                <button class="uk-button uk-button-default submit_answer" data-id="{{ i.pk }}">
+                    {{ i.answer }}
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

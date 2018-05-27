@@ -1,0 +1,200 @@
+<div class="type7" data-question-id="{{ question.pk }}" id="test_type">
+    <h3>Просмотрите сюжет №1 и оцените журналистский материал. Для этого поставьте балл от 0 до 5 напротив
+        каждого качества материала. Если материал соответствует критерию оценки полностью,
+        то ставьте 6 баллов, если данный критерий вообще не присутствует в сюжете, то ставьте 0 баллов. </h3>
+
+    <div class="q-video">
+        <iframe src="https://www.youtube.com/embed/{{ question.video }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="type7-content">
+        <ul class="uk-list">
+            {% for i in question.answer.all %}
+                <li>{{ i.answer }}</li>
+            {% endfor %}
+        </ul>
+        <div class="q-answers">
+            <div class="uk-form-controls">
+                <span>0</span>
+                <div>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio1">
+                    </label>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio2">
+                    </label>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio3">
+                    </label>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio4">
+                    </label>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio5">
+                    </label>
+                    <label>
+                        <input class="uk-radio" type="radio" name="radio6">
+                    </label>
+                </div>
+            </div>
+            <div class="q-answers">
+                <div class="uk-form-controls">
+                    <span>1</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="uk-form-controls">
+                    <span>2</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="uk-form-controls">
+                    <span>3</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="uk-form-controls">
+                    <span>4</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="uk-form-controls">
+                    <span>5</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="uk-form-controls">
+                    <span>6</span>
+                    <div>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio1">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio2">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio3">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio4">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio5">
+                        </label>
+                        <label>
+                            <input class="uk-radio" type="radio" name="radio6">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        {#    <div class="q-overlay">#}
+        {#        <div class="overlay-true">#}
+        {#            <i class="zmdi zmdi-check-circle"></i>#}
+        {#            <h4>Верно!</h4>#}
+        {#        </div>#}
+        {##}
+        {#        <div class="overlay-false">#}
+        {#            <i class="zmdi zmdi-minus-circle"></i>#}
+        {#            <h4>Неверно!</h4>#}
+        {#        </div>#}
+        {#    </div>#}
+    </div>
+</div>

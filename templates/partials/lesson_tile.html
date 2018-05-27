@@ -1,0 +1,30 @@
+<div class="uk-child-width-1-4 uk-grid-small" uk-grid>
+    {% for i in user_lessons %}
+    <div class="uk-text-center">
+        <a href="{% url 'lesson_detail' i.slug %}" class="category">
+            <div>
+                <span>
+                    <img src="{{ i.image.url }}" alt="image">
+                </span>
+                <p>{{ i.name }}</p>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+    {% for i in disabled_lessons %}
+        <div class="uk-text-center">
+            <a href="{% url 'lesson_detail' i.slug %}" class="category uk-disabled uk-inline">
+                <div class="uk-overlay-primary uk-position-cover" style="border-radius:15px"></div>
+                <div class="uk-overlay uk-position-bottom uk-dark">
+                    <p>Чтобы получить доступ к этому уроку, пройдите тест предыдущего урока</p>
+                </div>
+                <div>
+                <span>
+                    <img src="{{ i.image.url }}" alt="image">
+                </span>
+                    <p>{{ i.name }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

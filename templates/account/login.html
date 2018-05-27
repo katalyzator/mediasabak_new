@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="my-profile">
+        <div class="uk-container">
+            <div class="change-profile-form">
+                <h4 class="uk-text-center">Авторизация</h4>
+
+                <form action="{% url 'account_login' %}" class="register" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            {% render_field login_form.login class+='uk-input' placeholder='E-mail' %}
+                        </div>
+
+                        <div class="uk-margin">
+                            {% render_field login_form.password class+='uk-input' placeholder='Пароль' %}
+                        </div>
+
+                        <button class="uk-button uk-button-default">Войти</button>
+                    </fieldset>
+                </form>
+
+                <a href="#modal-center2" class="modal-link" uk-toggle>Зарегистрироваться</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

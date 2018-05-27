@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="my-profile">
+        <div class="uk-container">
+            <div class="change-profile-form">
+                <h4 class="uk-text-center">Ваши данные</h4>
+                <form action="{% url 'user_profile' request.user.slug %}" class="profile-information" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            {% render_field form.first_name class+='uk-input' placeholder='Ваше имя' %}
+                        </div>
+
+                        <div class="uk-margin">
+                            {% render_field form.last_name class+='uk-input' placeholder='Фамилия' %}
+                        </div>
+                        <div class="uk-margin">
+                            {% render_field form.gender class+='uk-select' %}
+                        </div>
+                        <div class="uk-margin">
+                            {% render_field form.email class+='uk-input' %}
+                        </div>
+                        <button class="uk-button uk-button-default">Сохранить</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="get_certificate uk-padding uk-flex uk-flex-center">
+                {% if all_lessons.count == request.user.learned_lessons.all.count %}
+                    <a href="{% url 'certificate' %}"
+                       class="uk-button uk-button-primary get_certificate">Получить сертификат</a>
+                {% else %}
+                    <h1 class="info">Чтобы получить сертификат, пройдите все <a href="{% url 'test' %}">тесты</a></h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block custom_scripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var count = 0;
+            $('.get_certificate a').addClass('uk-disabled');
+            $.each($('.profile-information input'), function (i, obj) {
+                if ($(obj).val() !== null && $(obj).val() !== '') {
+                    count++;
+                }
+            });
+            if (count === 4) {
+                $('.get_certificate a').removeClass('uk-disabled');
+            }
+            else {
+
+                $('.info').text('Заполните пожалуйста свой профиль');
+            }
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% block content %}
+    <div class="my-profile">
+        <div class="uk-container">
+            <div class="change-profile-form">
+                <h4 class="uk-text-center">Регистрация</h4>
+                <p class="uk-text-center"><a href="{{ login_url }}">Уже есть аккаунт?</a></p>
+                {% if form.email.errors %}
+                    <h6>Этот имейл уже занят</h6>
+                {% endif %}
+                <form action="{% url 'account_login' %}" class="register" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            {% render_field login_form.login class+='uk-input' placeholder='E-mail' %}
+                        </div>
+
+                        <div class="uk-margin">
+                            {% render_field login_form.password class+='uk-input' placeholder='Пароль' %}
+                        </div>
+
+                        <button class="uk-button uk-button-default uk-margin-auto uk-display-block">Регистрация</button>
+                    </fieldset>
+                </form>
+
+                <a href="#modal-center2" class="modal-link uk-text-center uk-display-block" uk-toggle>Зарегистрироваться</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="projects-page">
+        <div uk-slideshow="min-height: 300; max-height: 500; animation: push">
+            <div class="uk-position-relative uk-visible-toggle">
+                <ul class="uk-slideshow-items">
+                    {% for i in slider %}
+                        <li>
+                            <img src="{{ i.image.url }}" alt="image" uk-cover>
+                            <div class="uk-position-center uk-position-small uk-text-center uk-light"><h2
+                                    class="uk-margin-remove">{{ i.text }}</h2></div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                   uk-slideshow-item="previous"></a> <a
+                    class="uk-position-center-right uk-position-small uk-hidden-hover"
+                    href="#" uk-slidenav-next uk-slideshow-item="next"></a></div>
+            <ul class="uk-slideshow-nav uk-dotnav uk-flex-center"></ul>
+        </div>
+        <div class="uk-container">
+            <div class="uk-child-width-1-2@l uk-child-width-1-1@m" uk-grid>
+                {#                <div>#}
+                {% for i in projects %}
+                    <div class="project">
+                        <div class="project-img"><img src="{{ i.preview.url }}" alt="image"></div>
+                        <div class="project-desc"><h4>{{ i.title }}</h4>
+                            {{ i.text|safe|truncatechars_html:255 }}
+                            <a href="{% url 'project_detail' i.slug %}">ЧИТАТЬ &nbsp<i
+                                    class="zmdi zmdi-arrow-right"></i></a></div>
+                    </div>
+                {% endfor %}
+                {#                </div>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}

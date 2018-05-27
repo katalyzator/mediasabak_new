@@ -1,0 +1,9 @@
+<div class="test-result">
+    <h4>Вы прошли тест на {{ point|floatformat:"0" }} %</h4>
+    {% if point > 40 and next_lesson %}
+        <h4 style="font-size: 16px;"><a href="{% url 'test_detail' next_lesson.slug %}">Следующий тест</a></h4>
+    {% endif %}
+    {% if is_last and user.is_correct %}
+        <h4 style="font-size: 16px;"><a href="{% url 'certificate' %}">Получить сертификат</a></h4>
+    {% endif %}
+</div>

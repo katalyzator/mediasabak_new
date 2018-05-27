@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load lesson_filter %}
+{% load thumbnail %}
+{% block content %}
+    <div class="lesson-page">
+        <div class="uk-container">
+            <div class="lesson_nav uk-flex uk-flex-between uk-align-center">
+                <div class="lesson-title">
+                    <a href="{% url 'all_lessons' %}"></a>
+                    <h4>{{ lesson.name }}</h4>
+                </div>
+                <div class="lesson-title">
+                    {% get_next_lesson lesson as next_lesson %}
+                    {% if next_lesson.success %}
+                        <h4 style="padding-right: 25px">{{ next_lesson.next_lesson_name }}</h4>
+                        <a href="{% url 'lesson_detail' next_lesson.next_lesson_slug %}"
+                           style="transform: scaleX(-1);"></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="lesson-switcher">
+                <div class="switcher-btns">
+                    <div class="tabs-nav" uk-switcher="animation: uk-animation-fade; connect: .uk-switcher">
+                        <button class="uk-button uk-button-default pause-btn" type="button">Мультик</button>
+                        <button class="uk-button uk-button-default pause-button" type="button">Инфографика</button>
+                        <button class="uk-button uk-button-default pause-button pause-btn" type="button">Урок</button>
+                        <button class="uk-button uk-button-default pause-button pause-btn" type="button" id="exercise">
+                            Упражнения
+                        </button>
+                        <button class="uk-button uk-button-default pause-button pause-btn" type="button" id="test">
+                            Это интересно
+                        </button>
+                    </div>
+                    <div class="tabs-nav downloads">
+                        {% if lesson.pdf_file %}
+                            <a class="uk-button uk-button-default uk-link" href="{{ lesson.pdf_file.url }}">Скачать
+                                PDF</a>
+                        {% endif %}
+                        {% if lesson.word_file %}
+                            <a class="uk-button uk-button-default uk-link" href="{{ lesson.word_file.url }}">Скачать
+                                WORD</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <ul class="uk-switcher tabs-content">
+                    <li>
+                        <div class="infographic">
+                            <div class="video_slide">
+                                <iframe id="video_frame" class="iframe_video"
+                                        src="https://www.youtube.com/embed/{{ lesson.video_key }}?enablejsapi=1"
+                                        frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </li>
+                    {# infograpchic#}
+                    <li>
+                        <div class="infographic">
+                            <div class="video_slide" id="p_video">
+                                <iframe id="vi_frame" class="iframe_video"
+                                        src="https://www.youtube.com/embed/{{ lesson.infographic_video_key }}?enablejsapi=1"
+                                        frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-position-relative uk-visible-toggle uk-light"
+                             uk-slideshow="min-height: 250; max-height: 600; animation: push">
+
+                            <ul class="uk-slideshow-items">
+                                {% for image in lesson.slider.all %}
+                                    <li>
+                                        <img src="{{ image.image.url }}" alt="image" uk-cover>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <a class="uk-position-center-left uk-position-small slide-btn" href="#"
+                               uk-slidenav-previous uk-slideshow-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small slide-btn" href="#"
+                               uk-slidenav-next uk-slideshow-item="next"></a>
+                        </div>
+                        {#                        </div>#}
+                    </li>
+                    <li class="test_block">
+                        <div class="tests" id="exercise_block">
+                            {#                            {% for i in exercise %}#}
+                            {#                                <div class="type2 exercise_questions">#}
+                            {#                                    <h4>{{ i.name }}</h4>#}
+                            {#                                    <div class="type2-content">#}
+                            {#                                        {% if i.image %}#}
+                            {#                                            <div class="type2-img">#}
+                            {#                                                <img src="{{ i.image.url }}" alt="{{ question.image }}">#}
+                            {#                                            </div>#}
+                            {#                                        {% endif %}#}
+                            {#                                        <div class="uk-form-controls">#}
+                            {#                                            {% for j in i.exercise_answer.all %}#}
+                            {#                                                <label>#}
+                            {#                                                    <input class="uk-radio exercise_answer" type="radio"#}
+                            {#                                                           name="answer_{{ i.pk }}"#}
+                            {#                                                           data-id="{{ j.pk }}"#}
+                            {#                                                           data-correct="{{ j.is_correct }}"#}
+                            {#                                                           data-description="{{ j.answer_description }}"> {{ j.answer }}#}
+                            {#                                                </label>#}
+                            {#                                            {% endfor %}#}
+                            {#                                        </div>#}
+                            {#                                    </div>#}
+
+                            {#                                    <button class="uk-button uk-button-default exercise_submit">Ok</button>#}
+                            {#                                </div>#}
+                            {#                            {% endfor %}#}
+                            {#                                                        <div class="test-result">#}
+                            {#                                                            <h4>Поздравляем вы прошли упражнение</h4>#}
+                            {#                                                        </div>#}
+                        </div>
+                    </li>
+                    <li>
+                        {#                        <div class="lesson_slider">#}
+                        <div class="uk-position-relative uk-visible-toggle uk-light"
+                             uk-slideshow="min-height: 250; max-height: 600; animation: push">
+
+                            <ul class="uk-slideshow-items">
+                                {% for image in lesson.facts.all %}
+                                    <li>
+                                        <img src="{{ image.image.url }}" alt="image" uk-cover>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <a class="uk-position-center-left uk-position-small slide-btn" href="#"
+                               uk-slidenav-previous uk-slideshow-item="previous"></a>
+                            <a class="uk-position-center-right uk-position-small slide-btn" href="#"
+                               uk-slidenav-next uk-slideshow-item="next"></a>
+
+                            {#                            </div>#}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block custom_scripts %}
+    <script type="text/javascript">
+        {% if lesson.exercise_lesson.first.exercise_question.first.pk %}
+            var next_question_id = {{ lesson.exercise_lesson.first.exercise_question.first.pk }};
+            var user_answer = [];
+            function get_answers_id(obj) {
+                user_answer = [];
+                if (obj.attr('data-id')) {
+                    user_answer.push($(obj).attr('data-id'));
+                }
+                else if ($('.exercise_answer:checked').attr('data-true-choice')) {
+                    $('.exercise_answer:checked').each(function (i, item) {
+                        user_answer.push($(item).attr('data-id') + ':' + $(item).attr('data-true-choice'))
+                    })
+                }
+                else if ($('.exercise_answer:checked').length) {
+                    $('.exercise_answer:checked').each(function (i, item) {
+                        if ($(item).attr('data-id')) {
+                            user_answer.push($(item).attr('data-id'));
+                        }
+                        else {
+                            user_answer.push('0');
+                        }
+                    });
+                }
+                else {
+                    $('.exercise_answer').each(function (i, obj) {
+                        user_answer.push($(obj).val());
+                    });
+                }
+
+            }
+            function check_asnwers(response) {
+                if (response.success) {
+                    $('.q-overlay').fadeIn('slow');
+                    $('.answer_description').fadeIn('slow')
+                }
+                else {
+                    $('.q-overlay').fadeIn('slow');
+                    $('.wrong_answer').fadeIn('slow');
+                    $('.overlay-false').fadeIn('slow')
+                }
+
+            }
+            function next_question() {
+                $('.exercise_submit').on('click', function (e) {
+                    get_answers_id($(this));
+                    next_question_id = $('#test_type').attr('data-question-id');
+                    console.log(next_question_id);
+                    $(this).parent().fadeOut('slow');
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'JSON',
+                        url: '/check_answers/' + next_question_id,
+                        data: {"answers": user_answer},
+                        success: function (response) {
+                            if (response) {
+                                console.log(response);
+                                next_question();
+                                check_asnwers(response);
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    });
+                });
+                $('.close_modal_button').on('click', function (e) {
+                    e.preventDefault();
+                    var next_question_id_var = $('#test_type').attr('data-question-id');
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'HTML',
+                        url: '/get_next_exercise_question/' + next_question_id + '/' + {{ lesson.exercise_lesson.first.pk }},
+                        data: {"answers": user_answer},
+                        success: function (response) {
+                            if (response) {
+                                $('#exercise_block').html(response);
+                                next_question_id = next_question_id_var;
+                                next_question();
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    });
+                })
+            }
+            $(document).ready(function () {
+                $('#exercise').on('click', function () {
+                    if ($('.test').length === 0) {
+                        $.ajax({
+                            method: 'POST',
+                            dataType: 'HTML',
+                            url: '/get_next_exercise_question/' + next_question_id + '/' + {{ lesson.exercise_lesson.first.pk }},
+                            data: {'test': 'test'},
+                            success: function (response) {
+                                if (response) {
+                                    $('#exercise_block').html(response);
+                                    next_question();
+                                }
+                            },
+                            error: function (response) {
+                                console.log(response);
+                            }
+                        })
+                    }
+                    next_question();
+                })
+            });
+        {% else %}
+            $('#exercise_block').html('<div class="test-result"><h4>По этому уроку нет упражнений</h4></div>');
+        {% endif %}
+    </script>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% block content %}
+    <div class="lesson-page test-page">
+        <div class="uk-container">
+            <div class="lesson-title">
+{#                <a href="{% url 'test' %}"></a>#}
+                <h4>{{ lesson.name }}</h4>
+            </div>
+            <div class="test_block" id="test_tab">
+                <div class="tests" id="tests">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block custom_scripts %}
+    <script type="text/javascript">
+        {% if lesson.test.first.test_question.first.pk %}
+            var user_answer = [];
+            function get_answers_id(obj) {
+                user_answer = [];
+                if (obj.attr('data-id')) {
+                    user_answer.push($(obj).attr('data-id'));
+                }
+                else if ($('.test_answer:checked').attr('data-true-choice')) {
+                    $('.test_answer:checked').each(function (i, item) {
+                        user_answer.push($(item).attr('data-id') + ':' + $(item).attr('data-true-choice'));
+                    })
+                }
+                else if ($('.test_answer:checked').length) {
+                    $('.test_answer:checked').each(function (i, item) {
+                        if ($(item).attr('data-id')) {
+                            user_answer.push($(item).attr('data-id'));
+                        }
+                        else {
+                            user_answer.push('0');
+                        }
+                        console.log($(item).attr('data-id'))
+                    });
+                }
+                else {
+                    $('.test_answer').each(function (i, obj) {
+                        user_answer.push($(obj).val());
+                    });
+                }
+
+
+            }
+
+            function next_question() {
+                $('.submit_answer').on('click', function (e) {
+                    e.preventDefault();
+                    get_answers_id($(this));
+                    console.log(user_answer);
+                    var question_id = $('#test_type').attr('data-question-id');
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'HTML',
+                        url: '/get_next_question/' + question_id + '/' + {{ lesson.test.first.pk }},
+                        data: {"answers": user_answer},
+                        success: function (response) {
+                            if (response) {
+                                $('#tests').html(response);
+                                next_question();
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    });
+                });
+            }
+
+            $(document).ready(function () {
+                if ($('.test').length === 0) {
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'HTML',
+                        url: '/get_next_question/' + {{ lesson.test.first.test_question.first.pk }} +'/' + {{ lesson.test.first.pk }},
+                        data: {'test': 'test'},
+                        success: function (response) {
+                            if (response) {
+                                $('#tests').html(response);
+                                next_question();
+                            }
+                        },
+                        error: function (response) {
+                            console.log(response);
+                        }
+                    })
+                }
+                next_question();
+            });
+        {% else %}
+            $('#tests').html('<div class="test-result"><h4>По этому уроку нет теста</h4></div>');
+        {% endif %}
+    </script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load lesson_filter %}
+{% block content %}
+    <div class="category-page">
+        <div class="uk-container uk-container-small">
+            {% filter_lessons request lessons as list %}
+            {{ list|safe }}
+        </div>
+    </div>
+{% endblock %}

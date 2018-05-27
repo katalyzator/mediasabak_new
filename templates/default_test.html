@@ -1,0 +1,24 @@
+{% load thumbnail %}
+<div class="test">
+    <div class="type2" data-question-id="{{ question.pk }}" id="test_type">
+        <h3>{{ question.name }}</h3>
+        <div class="type2-content">
+            {% if question.image %}
+                {% thumbnail question.image "x360" as im %}
+                    <div class="type2-img">
+                        <img src="{{ im.url }}" alt="{{ im }}">
+                    </div>
+                {% endthumbnail %}
+            {% endif %}
+            <div class="uk-form-controls">
+                {% for i in question.test_answer.all %}
+                    <label>
+                        <input class="uk-radio test_answer" type="radio" name="answer"
+                               data-id="{{ i.pk }}"> {{ i.answer }}
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+        <button class="uk-button uk-button-default submit_answer">Ok</button>
+    </div>
+</div>

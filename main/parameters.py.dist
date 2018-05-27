@@ -1,0 +1,7 @@
+DB_NAME = 'mediasabak_new'
+DB_USER = 'root'
+DB_PASS = '124358911'
+ROOT_FOLDER = 'mediasabak_new'
+EMAIL_USER = ''
+EMAIL_PASSWORD = ''
+BASE_URL = 'http://localhost:8000/'

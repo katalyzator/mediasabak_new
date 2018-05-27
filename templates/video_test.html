@@ -1,0 +1,19 @@
+<div class="test">
+    <div class="type1" {% if next_question %} data-next-question-id="{{ next_question.pk }}" {% endif %} id="test_type">
+        <h3>{{ question.name }}</h3>
+        <div class="q-video">
+            <iframe id="video_frame"
+                    src="https://www.youtube.com/embed/{{ question.video }}" frameborder="0" allowfullscreen
+                    width="100%" height="auto"></iframe>
+        </div>
+        <div class="uk-form-controls">
+            {% for i in question.test_answer.all %}
+                <label>
+                    <input class="uk-radio test_answer" type="radio" name="radio" data-id="{{ i.id }}">
+                    <span>{{ i.answer }}</span>
+                </label>
+            {% endfor %}
+        </div>
+        <button class="uk-button uk-button-default exercise_submit">Ok</button>
+    </div>
+</div>
