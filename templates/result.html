@@ -5,5 +5,17 @@
     {% endif %}
     {% if is_last and user.is_correct %}
         <h4 style="font-size: 16px;"><a href="{% url 'certificate' %}">Получить сертификат</a></h4>
+
+    {% else %}
+        <h5>Чтобы получить сертификат рекомендуем вам пройти онлайн обучение повторно</h5>
+        <p>
+            Также вы можете использовать наши книжные материалы из нашей библиотеки
+
+            <button class="uk-button uk-button-primary" style="width: 400px;   height: 60px;"><a
+                    href="{% url 'books' %}" style="color: white;">Перейти в библиотеку</a></button>
+        </p>
+
     {% endif %}
+
+
 </div>
