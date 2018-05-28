@@ -43,6 +43,17 @@ class LessonListView(ListView):
             return ['lesson.html']
 
 
+class TestLessonListView(ListView):
+    model = Lesson
+    template_name = 'lesson.html'
+    context_object_name = 'lessons'
+
+    def get_context_data(self, **kwargs):
+        context = super(TestLessonListView, self).get_context_data(**kwargs)
+        context['lessons'] = Lesson.objects.filter(test__part_id=self.kwargs['id'])
+        return context
+
+
 class LessonDetailView(DetailView):
     model = Lesson
     context_object_name = 'lesson'
@@ -62,14 +73,6 @@ class LessonDetailView(DetailView):
             return ['lesson_page.html']
 
 
-class TestLessonListView(TemplateView):
-    model = Lesson
-    template_name = 'lesson.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(TestLessonListView, self).get_context_data(**kwargs)
-        context['lessons'] = Lesson.objects.filter(test__part_id=self.kwargs['id'])
-        return context
 
 
 class PartListView(ListView):
