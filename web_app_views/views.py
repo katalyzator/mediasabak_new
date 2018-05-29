@@ -62,7 +62,7 @@ class LessonDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(LessonDetailView, self).get_context_data(**kwargs)
-        exercises = ExerciseQuestion.objects.filter(exercise__lesson=self.object)
+        exercises = ExerciseQuestion.objects.filter(exercise__lesson=self.object).order_by('?')[:20]
         context['exercise'] = exercises
         return context
 
