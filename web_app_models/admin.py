@@ -17,6 +17,11 @@ class TestAnswerInline(admin.StackedInline):
     extra = 2
 
 
+class TestQuestionsAnswerInline(admin.StackedInline):
+    model = Answer
+    extra = 2
+
+
 class FactsInline(admin.StackedInline):
     model = InterestingFacts
     extra = 2
@@ -45,6 +50,9 @@ class BookAdmin(admin.ModelAdmin):
     form = BooksUploadForm
 
 
+class QuestionInline(admin.ModelAdmin):
+    inlines = (TestQuestionsAnswerInline, )
+
 admin.site.register(Users)
 admin.site.register(Lesson, LessonAdmin)
 admin.site.register(ExerciseQuestion, ExerciseQuestionAdmin)
@@ -61,5 +69,5 @@ admin.site.register(Results)
 admin.site.register(Partners)
 admin.site.register(AboutUs)
 admin.site.register(Part)
-admin.site.register(Question)
+admin.site.register(Question, QuestionInline)
 admin.site.register(Answer)
