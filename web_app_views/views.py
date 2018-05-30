@@ -86,7 +86,7 @@ class LessonSecondListView(ListView):
 
 
 def get_random_question(request, id):
-    question = Question.objects.filter(exam=Lesson.objects.get(id=id)).order_by('?')[:2]
+    question = Question.objects.filter(exam=Lesson.objects.get(id=id)).order_by('?')[:20]
 
     return render(request, 'random_test.html', {"questions": question})
 
