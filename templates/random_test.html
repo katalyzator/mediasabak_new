@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div id="slickQuiz">
+        {% include 'partials/_test_lesson.html' %}
+    </div>
+{% endblock %}
+
+
+{% block custom_scripts %}
+    <script>
+        var quizJSON = {
+            "info": {
+                "name": "Проверка ваших знаний",
+                "main": "Вы готовы?",
+                "results": "Если вы сомневаетесь в своих знаниях, то пройдите тест еще раз",
+                "level1": "Динозавр",
+                "level2": "Высший",
+                "level3": "Средний",
+                "level4": "Новичок",
+                "level5": "Школьник" // no comma here
+            },
+            "questions": [
+                {% for question in questions %}
+                    { // Question 1 - Multiple Choice, Single True Answer
+
+                        "q": "{{ question.question_text }}",
+                        "a": [
+                            {% for answer in question.question_answer.all %}
+                                {
+                                    "option": "{{ answer.text }}",
+                                    "correct": {% if answer.is_valid %} true {% else %}
+                                        false {% endif %}
+                                },
+                            {% endfor %}
+                        ],
+                        "correct": "<p><span>Вы абсолютно правы!</span></p>",
+                        "incorrect": "<p><span>К сожалению, ваш ответ неверный.</span></p>" // no comma here
+                    },
+                {% endfor %}
+            ]
+        };
+    </script>
+{% endblock %}

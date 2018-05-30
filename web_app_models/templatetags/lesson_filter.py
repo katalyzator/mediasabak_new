@@ -1,3 +1,5 @@
+import random
+
 from django import template
 from django.shortcuts import render_to_response
 from django.urls import reverse
@@ -43,3 +45,10 @@ def get_next_lesson(lesson):
         return dict(success=True, next_lesson_name=next_lesson.name, next_lesson_slug=next_lesson.slug)
     else:
         return dict(success=False)
+
+
+@register.filter
+def shuffle(arg):
+    aux = list(arg)[:]
+    random.shuffle(aux)
+    return aux

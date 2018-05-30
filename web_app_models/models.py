@@ -122,6 +122,11 @@ class Test(models.Model):
         verbose_name_plural = 'Тесты'
 
 
+class RandomManager(models.Manager):
+    def get_query_set(self):
+        return super(RandomManager, self).get_query_set().order_by('?')
+
+
 class TestQuestion(models.Model):
     test = models.ForeignKey(Test, verbose_name='Относится к тесту', related_name='test_question')
     type = models.CharField(verbose_name='Тип вопроса', max_length=255, choices=TEST_TYPE_CHOICE, null=True)
@@ -338,3 +343,38 @@ class Partners(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=256, verbose_name=u'Текст вопроса')
+    is_published = models.BooleanField(default=False)
+    exam = models.ForeignKey(Lesson, related_name='lesson_question')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name='Дата создания')
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Рандом вопросы'
+        verbose_name = 'Вопрос'
+
+    def __str__(self):
+        return str(self.question_text)
+
+
+class Answer(models.Model):
+    """
+    Answer's Model, which is used as the answer in Question Model
+    """
+    text = models.CharField(max_length=128, verbose_name=u'Текст ответа')
+    is_valid = models.BooleanField(default=False)
+    question = models.ForeignKey(Question, related_name='question_answer')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name='Дата создания')
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Рандом Ответы'
+        verbose_name = 'Ответ'
+
+    def __str__(self):
+        return str(self.text)

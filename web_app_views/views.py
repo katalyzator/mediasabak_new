@@ -1,7 +1,7 @@
 # Create your views here.
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render_to_response, render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -73,12 +73,22 @@ class LessonDetailView(DetailView):
             return ['lesson_page.html']
 
 
-
-
 class PartListView(ListView):
     model = Part
     context_object_name = 'parts'
     template_name = 'part_list.html'
+
+
+class LessonSecondListView(ListView):
+    model = Lesson
+    context_object_name = 'lessons'
+    template_name = 'second_lesson.html'
+
+
+def get_random_question(request, id):
+    question = Question.objects.filter(exam=Lesson.objects.get(id=id)).order_by('?')[:2]
+
+    return render(request, 'random_test.html', {"questions": question})
 
 
 class BooksListView(ListView):
