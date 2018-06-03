@@ -349,6 +349,8 @@ class Question(models.Model):
     question_text = models.CharField(max_length=256, verbose_name=u'Текст вопроса')
     is_published = models.BooleanField(default=False)
     exam = models.ForeignKey(Lesson, related_name='lesson_question')
+    is_true = models.TextField(verbose_name='Текст при правильном ответе')
+    is_false = models.TextField(verbose_name='Текст если неправильно')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name='Дата создания')
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

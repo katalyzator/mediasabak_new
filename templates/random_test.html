@@ -36,8 +36,8 @@
                                 },
                             {% endfor %}
                         ],
-                        "correct": "<p><span>Вы абсолютно правы!</span></p>",
-                        "incorrect": "<p><span>К сожалению, ваш ответ неверный.</span></p>" // no comma here
+                        "correct": "<p><span>{{ question.is_true }}</span></p>",
+                        "incorrect": "<p><span>{{ question.is_false }}</span></p>" // no comma here
                     },
                 {% endfor %}
             ]
